@@ -1,0 +1,99 @@
+*{
+    margin: 0px;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black ;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.h1container{
+    position:absolute;
+    margin-top: -800px;
+    margin-left:450px;
+    width:800px;
+}
+h1{
+    
+    font-size: 64px;
+    background: linear-gradient(180deg, #FFF 0%, rgba(0, 0, 0, 0) 110.32%);           
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 82.292%; 
+}
+.container{
+    width: 1400px;
+    height: 800px;
+    flex-shrink: 0;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-top:80px;
+
+    border-radius: 30px;
+    border:double 5px transparent;
+    background-image: linear-gradient(black,black),
+    linear-gradient(107deg, rgb(6, 250, 254), rgba(251, 5, 215));
+    background-origin: border-box;
+    background-clip:content-box,border-box;            
+}
+
+.shadow{
+    width: 1400px;
+    height: 800px;
+    flex-shrink: 0;
+    position:absolute;
+    margin-top:50px;
+    border-radius: 40.916px;
+    background: linear-gradient(107deg, rgba(6, 250, 254, 0.359) 2.49%, rgba(251, 5, 214, 0.342) 97.53%);
+    filter: blur(250px);
+    z-index: -1;
+}
+
+hr{
+    margin-left:20px;
+    margin-top: -150px;
+    width:1350px;   
+    height:1px; 
+    opacity: 0.5;
+    background: #FFF;
+}
+canvas{
+    margin-top:-40px;
+    width: 1400px;
+    height: 600px;
+    flex-shrink: 0;
+    border-radius: 27px;
+    background: #353535;
+}
+p{
+    width: 187px;
+    height: 39.571px;
+    flex-shrink: 0;
+    color: #FFF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0.5;
+}
+.cont2{
+    margin-top:-140px;
+    display: flex;
+    justify-content:space-around;
+}
+#colorpick{
+    border-radius: 10px;
+    border: 3px solid #848484;
+    width:100px;
+    height:100px;
+    border:none;
+    cursor: pointer;
+}
+
