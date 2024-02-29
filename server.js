@@ -3,6 +3,7 @@ const cookieParser = require("cookie-parser");
 const path = require("path");
 
 const user = require("./controllers/user");
+const {sessionToUser} = require("./middleware/session");
 
 const app = express();
 
@@ -15,7 +16,8 @@ app.get("/login", (req, res) => {
     res.sendFile(path.join(__dirname, "/views", "login.html"));
 })
 
-app.get("/pixel", (req, res) => {
+app.get("/pixel", sessionToUser,  (req, res) => {
+    if(!req.user) res.location("/login").send(301);
     res.sendFile(path.join(__dirname, "/views", "pixel.html"));
 })
 
