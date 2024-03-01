@@ -22,5 +22,5 @@ module.exports.writePixel = (userId, color, x, y) => {
 }
 
 module.exports.dumpCanvas = () => {
-    return database.prepare("select row, col, color from canvas order by row, col;").get();
+    return database.prepare("select row, col, color from canvas order by row, col;").all();
 }

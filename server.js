@@ -3,6 +3,7 @@ const cookieParser = require("cookie-parser");
 const path = require("path");
 
 const user = require("./controllers/user");
+const canvas = require("./controllers/canvas");
 const {sessionToUser} = require("./middleware/session");
 
 const app = express();
@@ -11,6 +12,7 @@ app.use(cookieParser());
 app.use(express.static("public/"));
 
 app.use("/api/user", user);
+app.use("/api/canvas", canvas);
 
 app.get("/login", (req, res) => {
     res.sendFile(path.join(__dirname, "/views", "login.html"));
