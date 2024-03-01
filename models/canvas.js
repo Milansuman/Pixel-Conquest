@@ -12,6 +12,15 @@ CREATE TABLE canvas (
 */
 
 module.exports.writePixel = (userId, color, x, y) => {
-    const statement = database.prepare("insert into canvas(row, col, color, user_id) values (?,?,?,?);");
-    statement.run()
+    const pixelExists = database.prepare("select count(id) as cds from canvas where row=? and col=?;").get(x, y).cds > 0;
+
+    if(pixelExists){
+        database.prepare("update canvas set color=?, user_id=? where row=? and col=?;").run(color, userId, x, y);
+    }else{
+        database.prepare("insert into canvas(row, col, color, user_id) values (?,?,?,?);").run(x, y, color, userId);
+    }
+}
+
+module.exports.dumpCanvas = () => {
+    return database.prepare("select row, col, color from canvas order by row, col;").get();
 }
