@@ -7,6 +7,7 @@ form.addEventListener("submit", async (ev) => {
         await post("/api/user/login", data)
         window.location.href = "/pixel"
     }catch(err){
+        console.log(err)
         window.location.href = "/login"
     }
 

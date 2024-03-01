@@ -10,7 +10,7 @@ router.use(express.urlencoded({
 router.post("/", (req, res) => {
     try {
         user.registerUser(req.body.username, req.body.password);
-        res.sendStatus(200);
+        res.json({ err: null });
     } catch (error) {
         res.status(500).json({
             error: error
@@ -21,7 +21,7 @@ router.post("/", (req, res) => {
 router.post("/login", (req, res) => {
     try {
         const session = user.login(req.body.username, req.body.password);
-        res.cookie("session", session).sendStatus(200);
+        res.cookie("session", session).json({err:null});
     } catch (error) {
         res.status(500).json({
             err: error

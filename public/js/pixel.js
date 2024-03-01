@@ -27,7 +27,8 @@ function display(){
             ctx.fillRect(pixel.row*pixelSize, pixel.col*pixelSize, pixelSize, pixelSize);
         }
     });
-    requestAnimationFrame(display)
 }
 
-display()
+setInterval(() => {
+    display()
+}, 500);
