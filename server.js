@@ -17,7 +17,7 @@ app.get("/login", (req, res) => {
 })
 
 app.get("/pixel", sessionToUser,  (req, res) => {
-    if(!req.user) res.location("/login").send(301);
+    if(!req.user) res.location("/login").send(403);
     res.sendFile(path.join(__dirname, "/views", "pixel.html"));
 })
 
